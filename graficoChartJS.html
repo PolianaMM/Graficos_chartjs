@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico ChartJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body style="display: flex; justify-content: center; margin-top: 14%;">
+
+    <div>
+        <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+
+    <div>
+        <canvas id="myChart2" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+
+</body>
+
+    <script>
+
+var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+                datasets: [{
+                    label: 'Temperatura ',
+                    data: [30, 29, 28, 25, 22, 23],
+                    backgroundColor: 'rgb(255, 99, 132)', 
+                    borderColor: 'rgb(255, 99, 132)',
+                    borderWidth: 1
+                }, {
+                    label: 'Umidade ',
+                    data: [80, 82, 80, 85, 80, 83],
+                    backgroundColor:'rgb(75, 192, 192)' , 
+                    borderColor: 'rgb(75, 192, 192)',
+                    borderWidth: 1 
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        var ctx = document.getElementById('myChart2').getContext('2d');
+        var myChart2 = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+                datasets: [{
+                    label: 'Temperatura Média',
+                    data: [22, 24, 27, 23, 20, 18],
+                    backgroundColor: 'rgb(255, 99, 132)', 
+                    borderColor: 'rgb(255, 99, 132)',
+                    borderWidth: 1
+                }, {
+                    label: 'Umidade Média',
+                    data: [90, 89, 93, 87, 88, 82],
+                    backgroundColor:'rgb(75, 192, 192)' , 
+                    borderColor: 'rgb(75, 192, 192)',
+                    borderWidth: 0.5 
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        
+</script>
+
+</body>
+
+</html>
